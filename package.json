@@ -1,0 +1,52 @@
+{
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "node typescript code test",
+    "main": "server.js",
+    "scripts": {
+        "start": "node dist/server.js",
+        "build": "npx tsc",
+        "dev": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\"  \"npm run watch-ts\" \"npm run serve-debug\"",
+        "serve-debug": "nodemon --inspect dist/server.js",
+        "watch-ts": "tsc -w",
+        "test": "jest --verbose --coverage",
+        "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix"
+    },
+    "author": "Long Ying",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/serberm/myoscodetest"
+    },
+    "dependencies": {
+        "@hapi/joi": "^17.1.1",
+        "@types/express": "^4.17.14",
+        "bcrypt": "^5.0.1",
+        "express": "^4.18.1",
+        "http-status-codes": "^2.2.0",
+        "jsonwebtoken": "^8.5.1",
+        "mkdirp": "^1.0.4",
+        "mongoose": "^6.6.2",
+        "multer": "^1.4.5-lts.1",
+        "swagger-jsdoc": "^6.2.5",
+        "swagger-ui-express": "^4.5.0",
+        "typescript": "^4.8.3"
+    },
+    "devDependencies": {
+        "@types/hapi__joi": "^17.1.8",
+        "@types/jest": "^29.0.3",
+        "@types/mongoose": "^5.11.97",
+        "@types/node": "^18.7.23",
+        "@types/supertest": "^2.0.12",
+        "@typescript-eslint/eslint-plugin": "^5.38.1",
+        "@typescript-eslint/parser": "^5.38.1",
+        "concurrently": "^7.4.0",
+        "dotenv": "^16.0.2",
+        "eslint": "^8.24.0",
+        "jest": "^29.0.3",
+        "mongodb-memory-server": "^8.9.3",
+        "morgan": "^1.10.0",
+        "nodemon": "^2.0.20",
+        "supertest": "^6.2.4",
+        "ts-jest": "^29.0.2"
+    }
+}
